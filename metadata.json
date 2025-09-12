@@ -1,0 +1,5 @@
+{
+  "name": "AI Image Studio",
+  "description": "An advanced AI-powered application to generate and edit images using text prompts. Users can start from scratch with a description, or upload an existing image and modify it with intuitive commands.",
+  "requestFramePermissions": []
+}
