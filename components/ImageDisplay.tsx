@@ -17,18 +17,18 @@ const LoadingSpinner: React.FC = () => (
 export const ImageDisplay: React.FC<ImageDisplayProps> = ({ generatedImages, isLoading, loadingMessage }) => {
   if (isLoading) {
     return (
-      <div className="bg-gray-800/50 p-8 min-h-[300px] flex flex-col justify-center items-center text-center">
+      <div className="bg-slate-800/50 p-8 min-h-[300px] flex flex-col justify-center items-center text-center">
         <LoadingSpinner />
-        <p className="text-lg font-medium text-gray-300 mt-4">{loadingMessage}</p>
-        <p className="text-gray-400">AI is thinking...</p>
+        <p className="text-lg font-medium text-slate-300 mt-4">{loadingMessage}</p>
+        <p className="text-slate-400">AI is thinking...</p>
       </div>
     );
   }
 
   if (generatedImages.length === 0) {
     return (
-        <div className="bg-gray-800/50 p-8 min-h-[300px] flex justify-center items-center text-center">
-            <p className="text-xl text-gray-500">Your generated images will appear here</p>
+        <div className="bg-slate-800/50 p-8 min-h-[300px] flex justify-center items-center text-center">
+            <p className="text-xl text-slate-500">Your generated images will appear here</p>
         </div>
     );
   }
@@ -43,7 +43,7 @@ export const ImageDisplay: React.FC<ImageDisplayProps> = ({ generatedImages, isL
   };
 
   return (
-    <div className="bg-gray-900/50 p-4 md:p-8">
+    <div className="bg-slate-900/50 p-4 md:p-8">
       <h2 className="text-2xl font-bold mb-6 text-center">Generated Images</h2>
       <div className={`grid gap-6 ${generatedImages.length > 1 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}>
         {generatedImages.map((imgSrc, index) => (
@@ -52,7 +52,7 @@ export const ImageDisplay: React.FC<ImageDisplayProps> = ({ generatedImages, isL
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-center items-center">
               <button 
                 onClick={() => downloadImage(imgSrc, index)}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-transform transform group-hover:scale-100 scale-90"
+                className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-lg transition-transform transform group-hover:scale-100 scale-90"
               >
                 Download
               </button>

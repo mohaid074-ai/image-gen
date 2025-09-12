@@ -13,7 +13,7 @@ export const History: React.FC<HistoryProps> = ({ images, onSelectImage }) => {
 
   return (
     <div className="mt-12 max-w-4xl mx-auto">
-      <h2 className="text-2xl font-bold mb-6 text-center text-gray-300">Generation History</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center text-slate-300">Generation History</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {images.map((imgSrc, index) => (
           <div 

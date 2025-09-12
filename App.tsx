@@ -99,16 +99,16 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200 font-sans">
+    <div className="min-h-screen bg-slate-900 text-slate-200 font-sans">
       <Header />
       <main className="container mx-auto p-4 md:p-8">
-        <div className="max-w-4xl mx-auto bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-slate-800 rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-6 md:p-8">
-            <div className="flex border-b border-gray-700 mb-6">
+            <div className="flex border-b border-slate-700 mb-6">
               <button
                 onClick={() => setActiveTab(Tab.GENERATE)}
                 className={`px-4 py-3 text-lg font-medium transition-colors duration-200 ease-in-out focus:outline-none ${
-                  activeTab === Tab.GENERATE ? 'text-indigo-400 border-b-2 border-indigo-400' : 'text-gray-400 hover:text-white'
+                  activeTab === Tab.GENERATE ? 'text-teal-400 border-b-2 border-teal-400' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 Generate Image
@@ -116,7 +116,7 @@ const App: React.FC = () => {
               <button
                 onClick={() => setActiveTab(Tab.EDIT)}
                 className={`px-4 py-3 text-lg font-medium transition-colors duration-200 ease-in-out focus:outline-none ${
-                  activeTab === Tab.EDIT ? 'text-indigo-400 border-b-2 border-indigo-400' : 'text-gray-400 hover:text-white'
+                  activeTab === Tab.EDIT ? 'text-teal-400 border-b-2 border-teal-400' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 Edit Image
@@ -143,12 +143,12 @@ const App: React.FC = () => {
 
             {activeTab === Tab.GENERATE && (
               <div className="mt-4">
-                <label htmlFor="numVariations" className="block text-sm font-medium text-gray-400 mb-2">Number of Variations</label>
+                <label htmlFor="numVariations" className="block text-sm font-medium text-slate-400 mb-2">Number of Variations</label>
                 <select
                   id="numVariations"
                   value={numVariations}
                   onChange={(e) => setNumVariations(Number(e.target.value))}
-                  className="bg-gray-700 border border-gray-600 rounded-md w-full p-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  className="bg-slate-700 border border-slate-600 rounded-md w-full p-2 focus:ring-teal-500 focus:border-teal-500"
                 >
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -162,7 +162,7 @@ const App: React.FC = () => {
               <button
                 onClick={activeTab === Tab.GENERATE ? handleGenerate : handleEdit}
                 disabled={isLoading}
-                className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-900 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg text-lg transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+                className="w-full bg-gradient-to-r from-teal-500 to-fuchsia-600 hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg text-lg transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg"
               >
                 {isLoading ? 'Processing...' : (activeTab === Tab.GENERATE ? `Generate ${numVariations > 1 ? numVariations + ' Images' : 'Image'}` : 'Apply Edit')}
               </button>
