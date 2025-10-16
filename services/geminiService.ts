@@ -82,12 +82,12 @@ export const editImage = async (prompt: string, uploadedImage: UploadedImage): P
         const textPart = { text: prompt };
 
         const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash-image-preview',
+            model: 'gemini-2.5-flash-image',
             contents: {
                 parts: [imagePart, textPart],
             },
             config: {
-                responseModalities: [Modality.IMAGE, Modality.TEXT],
+                responseModalities: [Modality.IMAGE],
             },
         });
         
