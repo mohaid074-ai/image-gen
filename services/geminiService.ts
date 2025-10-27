@@ -1,12 +1,13 @@
-
 import { GoogleGenAI, Modality } from "@google/genai";
 import type { UploadedImage } from '../types';
 
-if (!process.env.API_KEY) {
+const apiKey = process.env.API_KEY || "AIzaSyDjxxeJo33gYsNeTY8ZoNZEzMI2xGAIGnI";
+
+if (!apiKey) {
     throw new Error("API_KEY environment variable not set.");
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey });
 
 const base64FromFile = async (file: File): Promise<{mimeType: string, data: string}> => {
   return new Promise((resolve, reject) => {
